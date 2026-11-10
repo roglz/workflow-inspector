@@ -1,0 +1,12 @@
+
+# Dependencies
+node_modules/
+
+# Generated builds and reports
+dist/
+coverage/
+playwright-report/
+test-results/
+
+# Generated dependency lockfile
+package-lock.json

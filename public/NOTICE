@@ -1,0 +1,34 @@
+Workflow Inspector Core
+Copyright 2026 @roglz
+
+Licensed under the Apache License, Version 2.0.
+See the LICENSE file in the project root.
+
+Third-Party Attribution
+-----------------------
+
+n8n Self-hosted AI Starter Kit
+
+This project includes an adapted workflow fixture derived from
+the n8n Self-hosted AI Starter Kit.
+
+Original project: n8n GmbH
+Source repository:
+https://github.com/n8n-io/self-hosted-ai-starter-kit
+
+The source project is licensed under Apache License 2.0.
+
+The fixture has been modified for local parser compatibility testing.
+The changes and original workflow URL are documented in:
+
+src/core/parser/fixtures/SOURCE.md
+
+A copy of the applicable source license is preserved in:
+
+src/core/parser/fixtures/LICENSE-APACHE-2.0.txt
+
+The third-party attribution does not transfer ownership of
+the original material to Workflow Inspector Core.
+
+Workflow Inspector Core is an independent project and is not
+affiliated with or endorsed by n8n GmbH.

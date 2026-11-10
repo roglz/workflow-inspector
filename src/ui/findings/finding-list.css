@@ -1,0 +1,139 @@
+.wi-findings {
+  margin-top: 28px;
+  padding-top: 26px;
+  border-top: 1px solid #dbe3ed;
+}
+
+.wi-findings h3 {
+  margin: 0 0 18px;
+  color: #132238;
+  font-size: 1.2rem;
+}
+
+.wi-findings-empty {
+  margin: 0;
+  padding: 18px 20px;
+  border: 1px solid #dbe3ed;
+  border-radius: 10px;
+  background: #f7f9fc;
+  color: #42546b;
+  line-height: 1.6;
+}
+
+.wi-finding-list {
+  display: grid;
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.wi-finding-card {
+  min-width: 0;
+  padding: 20px;
+  border: 1px solid #dbe3ed;
+  border-left-width: 4px;
+  border-radius: 10px;
+  background: #ffffff;
+}
+
+.wi-finding-card--error {
+  border-left-color: #b42318;
+}
+
+.wi-finding-card--warning {
+  border-left-color: #a05a00;
+}
+
+.wi-finding-card--info {
+  border-left-color: #2456ca;
+}
+
+.wi-finding-metadata {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.wi-finding-rule,
+.wi-finding-severity,
+.wi-finding-confidence,
+.wi-finding-node {
+  display: inline-block;
+  max-width: 100%;
+  padding: 5px 9px;
+  border-radius: 6px;
+  font-size: 0.78rem;
+  font-weight: 650;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+
+.wi-finding-rule {
+  background: #e9eef6;
+  color: #263b55;
+}
+
+.wi-finding-severity--error {
+  background: #fff0ee;
+  color: #99251d;
+}
+
+.wi-finding-severity--warning {
+  background: #fff3df;
+  color: #855000;
+}
+
+.wi-finding-severity--info {
+  background: #eaf1ff;
+  color: #234fa6;
+}
+
+.wi-finding-confidence,
+.wi-finding-node {
+  background: #f1f4f8;
+  color: #465a72;
+}
+
+.wi-finding-card h4 {
+  margin: 0 0 10px;
+  color: #17263c;
+  font-size: 1.05rem;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+
+.wi-finding-description,
+.wi-finding-recommendation {
+  margin: 10px 0 0;
+  color: #42546b;
+  font-size: 0.93rem;
+  line-height: 1.65;
+  overflow-wrap: anywhere;
+}
+
+.wi-finding-recommendation {
+  padding-top: 12px;
+  border-top: 1px solid #e8edf3;
+}
+
+.wi-finding-recommendation strong {
+  color: #263b55;
+}
+
+@media (max-width: 600px) {
+  .wi-findings {
+    margin-top: 22px;
+    padding-top: 22px;
+  }
+
+  .wi-finding-card {
+    padding: 16px;
+  }
+
+  .wi-finding-metadata {
+    gap: 6px;
+  }
+}

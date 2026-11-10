@@ -1,0 +1,87 @@
+.wi-file-import {
+  margin-top: 22px;
+  padding: 20px;
+  border: 1px solid #dbe3ed;
+  border-radius: 10px;
+  background: #f7f9fc;
+}
+
+.wi-file-import .wi-label {
+  margin-bottom: 10px;
+}
+
+.wi-file-input {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  padding: 10px;
+  border: 1px solid #bdcad9;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #23374e;
+  font: inherit;
+  font-size: 0.88rem;
+}
+
+.wi-file-input::file-selector-button {
+  margin-right: 14px;
+  padding: 9px 13px;
+  border: 1px solid #bdcad9;
+  border-radius: 6px;
+  background: #e9eef6;
+  color: #23374e;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.wi-file-input:focus-visible {
+  outline: 3px solid #93b4ff;
+  outline-offset: 3px;
+}
+
+.wi-file-help {
+  margin: 12px 0 0;
+  color: #596b80;
+  font-size: 0.84rem;
+  line-height: 1.6;
+}
+
+.wi-file-status {
+  margin: 14px 0 0;
+  padding: 11px 13px;
+  border: 1px solid #c8d8ef;
+  border-radius: 7px;
+  background: #edf4ff;
+  color: #244c83;
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+.wi-file-status--success {
+  border-color: #c5e4d2;
+  background: #f0faf4;
+  color: #145332;
+}
+
+.wi-file-status--error {
+  border-color: #f1caca;
+  background: #fff4f4;
+  color: #8a2424;
+}
+
+.wi-submit:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+@media (max-width: 600px) {
+  .wi-file-import {
+    padding: 14px;
+  }
+
+  .wi-file-input::file-selector-button {
+    margin-right: 8px;
+    padding: 8px 10px;
+  }
+}

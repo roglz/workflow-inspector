@@ -1,0 +1,40 @@
+.wi-finding-groups {
+  display: grid;
+  gap: 22px;
+}
+
+.wi-finding-group {
+  min-width: 0;
+  padding: 18px;
+  border: 1px solid #dbe3ed;
+  border-radius: 12px;
+  background: #f7f9fc;
+}
+
+.wi-finding-group-heading {
+  margin: 0 0 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #dbe3ed;
+  color: #23374e;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.wi-finding-group .wi-finding-card {
+  background: #ffffff;
+}
+
+@media (max-width: 600px) {
+  .wi-finding-groups {
+    gap: 16px;
+  }
+
+  .wi-finding-group {
+    padding: 12px;
+  }
+
+  .wi-finding-group-heading {
+    margin-bottom: 12px;
+  }
+}
