@@ -6,6 +6,7 @@ import {
   type FormEvent,
 } from 'react'
 
+import { runTrackedAudit } from './analytics/run-tracked-audit'
 import { AuditReportDownload } from './ui/export/audit-report-download'
 import { FindingList } from './ui/findings/finding-list'
 import {
@@ -92,7 +93,18 @@ export default function App() {
     }
 
     setFileStatus({ kind: 'idle' })
-    dispatch({ type: 'submit' })
+
+    const outcome = runTrackedAudit(state.input)
+
+    if (outcome.kind === 'unexpected_failure') {
+      dispatch({ type: 'unexpected_failure' })
+      return
+    }
+
+    dispatch({
+      type: 'submit',
+      result: outcome.kind === 'result' ? outcome.result : null,
+    })
   }
 
   return (
@@ -195,6 +207,12 @@ export default function App() {
             </p>
           )}
 
+          {state.feedback.kind === 'unexpected_failure' && (
+            <section className="wi-message wi-message--error" role="alert">
+              <h3>Audit could not be completed</h3>
+              <p>The audit could not be completed due to an internal error.</p>
+            </section>
+          )}
           {state.feedback.kind === 'audit' &&
             (state.feedback.result.success ? (
               <section

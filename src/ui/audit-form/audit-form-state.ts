@@ -1,11 +1,9 @@
-import {
-  auditWorkflowJson,
-  type AuditWorkflowResult,
-} from '../../core/audit/audit-workflow-json'
+import type { AuditWorkflowResult } from '../../core/audit/audit-workflow-json'
 
 export type AuditFormFeedback =
   | { kind: 'idle' }
   | { kind: 'empty' }
+  | { kind: 'unexpected_failure' }
   | {
       kind: 'audit'
       result: AuditWorkflowResult
@@ -23,6 +21,10 @@ export type AuditFormAction =
     }
   | {
       type: 'submit'
+      result: AuditWorkflowResult | null
+    }
+  | {
+      type: 'unexpected_failure'
     }
 
 export const initialAuditFormState: AuditFormState = {
@@ -42,7 +44,7 @@ export function auditFormReducer(
       }
 
     case 'submit':
-      if (state.input.trim().length === 0) {
+      if (action.result === null) {
         return {
           ...state,
           feedback: { kind: 'empty' },
@@ -53,8 +55,13 @@ export function auditFormReducer(
         ...state,
         feedback: {
           kind: 'audit',
-          result: auditWorkflowJson(state.input),
+          result: action.result,
         },
+      }
+    case 'unexpected_failure':
+      return {
+        ...state,
+        feedback: { kind: 'unexpected_failure' },
       }
   }
 }

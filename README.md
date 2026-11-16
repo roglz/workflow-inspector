@@ -163,20 +163,26 @@ and environments.
 
 ## Privacy
 
-Workflow Inspector is designed to analyze workflow JSON locally in the
-browser.
+Workflow Inspector analyzes workflow JSON locally in the browser. It does not
+execute workflows or require n8n credentials.
 
-It does not require n8n credentials or execute workflows.
+The public GitHub Pages demo uses Umami Cloud for basic website analytics.
+It records pageviews and three audit events: `audit_started`,
+`audit_completed`, and `audit_failed`. Failure events contain only one
+predefined reason: `invalid_json`, `invalid_structure`, or `technical_error`.
 
-Automated tests verified that selected audit and export scenarios did not
-make external HTTP requests.
+The application is designed not to send workflow JSON, imported filenames,
+node names, credentials, findings, or error messages to Umami. The tracker
+filters outgoing analytics payloads and is disabled during local development.
 
-The exported report is designed to contain findings and summary metadata,
-rather than a copy of the original workflow JSON.
+Umami Cloud processes technical request metadata to provide analytics.
+Browser requests to the analytics service may expose network information,
+including IP addresses, to the service and its infrastructure.
 
-These tests do not establish an absolute security or privacy guarantee.
+See [Analytics and privacy](docs/ANALYTICS_PRIVACY.md) for the detailed
+data-handling description, limitations, and test coverage.
 
-Review generated reports before sharing them.
+Review exported audit reports before sharing them.
 
 ## Limitations
 
@@ -197,6 +203,7 @@ It is a static analysis aid, not a substitute for testing workflows in n8n.
 - [Local installation](docs/LOCAL_INSTALLATION.md)
 - [Stage 5 technical validation](docs/STAGE_5_VALIDATION.md)
 - [Stage 6 release preparation](docs/STAGE_6_RELEASE_PREPARATION.md)
+- [Analytics and privacy](docs/ANALYTICS_PRIVACY.md)
 
 The documentation filenames will be standardized in English before release.
 
