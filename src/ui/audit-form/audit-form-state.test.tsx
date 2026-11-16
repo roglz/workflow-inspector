@@ -1,5 +1,6 @@
 import { renderToStaticMarkup } from 'react-dom/server'
 import { describe, expect, it } from 'vitest'
+import { auditWorkflowJson } from '../../core/audit/audit-workflow-json'
 
 import App from '../../App'
 import {
@@ -55,6 +56,7 @@ function edit(value: string): AuditFormState {
 function submit(value: string): AuditFormState {
   return auditFormReducer(edit(value), {
     type: 'submit',
+    result: value.trim().length === 0 ? null : auditWorkflowJson(value),
   })
 }
 
@@ -81,6 +83,36 @@ describe('Stage 4 - Local JSON audit form', () => {
       input: value,
       feedback: { kind: 'idle' },
     })
+  })
+
+  it('stores an externally computed result unchanged', () => {
+    const result = {
+      success: true as const,
+      nodeCount: 123,
+      findings: [],
+    }
+
+    const state = auditFormReducer(edit('not valid JSON'), {
+      type: 'submit',
+      result,
+    })
+
+    expect(state.input).toBe('not valid JSON')
+    expect(state.feedback).toEqual({
+      kind: 'audit',
+      result,
+    })
+  })
+
+  it('records unexpected failures without exposing the input', () => {
+    const state = auditFormReducer(edit('SECRET_WORKFLOW_CONTENT'), {
+      type: 'unexpected_failure',
+    })
+
+    expect(state.feedback).toEqual({ kind: 'unexpected_failure' })
+    expect(JSON.stringify(state.feedback)).not.toContain(
+      'SECRET_WORKFLOW_CONTENT',
+    )
   })
 
   it('rejects an empty submission without running the audit', () => {

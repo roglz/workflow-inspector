@@ -298,23 +298,30 @@ not only those currently visible.
 
 ## 13. Privacy and data handling
 
-Workflow Inspector is designed to process
-workflow JSON locally in the browser.
+Workflow Inspector processes workflow JSON locally in your browser.
 
-It does not require n8n credentials.
+It does not require n8n credentials and does not execute workflow nodes or
+connections.
 
-It does not execute nodes or connections.
+The public GitHub Pages demo uses Umami Cloud to measure visits and audit
+usage. It records when an audit starts, completes, or fails. Failure
+categories are limited to invalid JSON, invalid workflow structure, and
+technical errors.
 
-Browser tests confirmed that selected audit
-and export scenarios did not make external
-HTTP requests.
+The analytics integration is designed not to transmit workflow content,
+filenames, node details, credentials, findings, or error messages.
 
-These tests do not establish an absolute
-security or privacy guarantee for every
-environment or browser configuration.
+The analytics provider may process IP addresses and browser request metadata.
+The integration does not provide an absolute anonymity guarantee.
 
-Use synthetic workflows for testing whenever
-possible and review reports before sharing.
+The tracker is disabled when running the application locally with Vite.
+Blocking analytics does not prevent local workflow analysis.
+
+For the complete description, see
+[Analytics and privacy](ANALYTICS_PRIVACY.md).
+
+Use synthetic workflows for testing whenever possible and review exported
+reports before sharing them.
 
 ## 14. Accessibility
 
@@ -354,6 +361,7 @@ It is a static structural analysis aid.
 - [Local installation](LOCAL_INSTALLATION.md)
 - [Stage 5 technical validation](STAGE_5_VALIDATION.md)
 - [Stage 6 release preparation](STAGE_6_RELEASE_PREPARATION.md)
+- [Analytics and privacy](ANALYTICS_PRIVACY.md)
 
 Document filenames will be standardized
 during the release documentation migration.
