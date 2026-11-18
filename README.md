@@ -1,5 +1,7 @@
 # Workflow Inspector
 
+**[Open the live demo](https://roglz.github.io/workflow-inspector/)** | [User guide](docs/USER_GUIDE.md)
+
 A privacy-focused, browser-based static analyzer for n8n workflow JSON files.
 
 Workflow Inspector examines workflow structure using ten deterministic audit
@@ -20,7 +22,18 @@ The application is built with React, TypeScript, and Vite.
 
 Workflow Inspector does not execute workflows or modify their original files.
 
-## Quick start
+## Try the public demo
+
+Use [Workflow Inspector online](https://roglz.github.io/workflow-inspector/) without installing anything.
+
+1. Paste an n8n workflow JSON into **Workflow JSON**, or select a local `.json` file (up to 5 MiB).
+2. Select **Analyze JSON**.
+3. Review the summary and findings. Filter or search the results as needed.
+4. Select **Export JSON report** to download the audit results.
+
+You do not need an n8n server, n8n credentials, or an account. Workflow analysis runs in your browser. The public demo uses privacy-filtered Umami analytics; see [Analytics and privacy](docs/ANALYTICS_PRIVACY.md).
+
+## Run locally
 
 Install the project dependencies:
 
@@ -119,7 +132,7 @@ Open:
 Vite Preview is intended for local verification, not public production
 hosting.
 
-The final distribution process will be defined during release preparation.
+The browser demo is already deployed to GitHub Pages through GitHub Actions.
 
 ## Development and testing
 
@@ -205,16 +218,16 @@ It is a static analysis aid, not a substitute for testing workflows in n8n.
 - [Stage 6 release preparation](docs/STAGE_6_RELEASE_PREPARATION.md)
 - [Analytics and privacy](docs/ANALYTICS_PRIVACY.md)
 
-The documentation filenames will be standardized in English before release.
+
 
 ## Project status
 
-Workflow Inspector is being prepared for its initial public Core release.
+Workflow Inspector Core has a public repository and a live browser demo.
 
 The current Core version is `0.1.0`, and the npm package is marked
 as private.
 
-The Core version and Apache License 2.0 are approved. Public repository publication and distribution details remain pending.
+The repository is public under Apache License 2.0. The npm package remains private; use the browser demo or run the application locally.
 
 Workflow Inspector Core may be used, modified, and redistributed under Apache License 2.0, subject to its terms.
 
