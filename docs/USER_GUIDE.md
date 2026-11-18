@@ -30,20 +30,21 @@ The application does not modify the original file.
 
 ## 3. Opening the application
 
-Open Workflow Inspector using the address provided
-by the person hosting or running the application.
+**Public demo:** [Open Workflow Inspector](https://roglz.github.io/workflow-inspector/).
 
-When running the development server locally,
-the usual address is:
+No installation, n8n account, n8n server, or n8n credentials are required.
 
-`http://localhost:5173/`
+You can paste workflow JSON or import a local `.json` file. Select **Analyze JSON** to run the ten static checks and review the results.
 
-The actual address is displayed by Vite.
+For a first test, use the minimal synthetic workflow in Section 4.
 
-For local build instructions, see
-[Local Installation](LOCAL_INSTALLATION.md).
+### Running locally
 
-You do not need to sign in to n8n.
+For development or offline workflow analysis, run the Vite development server. Its default address is usually `http://localhost:5173/`, but use the address printed by Vite.
+
+See [Local Installation](LOCAL_INSTALLATION.md) for setup instructions.
+
+Workflow content is analyzed in the browser. The public demo also sends limited, privacy-filtered analytics events to Umami Cloud. See [Analytics and privacy](ANALYTICS_PRIVACY.md).
 
 ## 4. Analyzing pasted workflow JSON
 
