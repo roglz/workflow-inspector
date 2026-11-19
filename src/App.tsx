@@ -111,11 +111,25 @@ export default function App() {
     <main className="wi-page">
       <div className="wi-container">
         <header className="wi-header">
-          <p className="wi-eyebrow">Local n8n workflow audit</p>
-          <h1>Workflow Inspector</h1>
+          <div className="wi-header-top">
+            <p className="wi-eyebrow">Local n8n workflow audit</p>
+            <a
+              className="wi-repository-link"
+              href="https://github.com/roglz/workflow-inspector"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="View Workflow Inspector repository on GitHub (opens in a new tab)"
+            >
+              View on GitHub
+              <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+          <h1>
+            Workflow Inspector <span className="wi-edition">Core</span>
+          </h1>
           <p className="wi-introduction">
-            Inspect the structure of an n8n workflow without running it or
-            sending its contents to a server.
+            Analyze n8n workflow JSON using ten static checks in your browser.
+            No n8n server, account, or workflow execution required.
           </p>
         </header>
 

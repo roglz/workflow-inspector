@@ -1,28 +1,9 @@
-:root {
-  font-family:
-    Inter,
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    sans-serif;
-  color: #17263c;
-  background: #f5f7fb;
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-}
-
-* {
-  box-sizing: border-box;
-}
-
 body {
   display: block;
   min-width: 320px;
   min-height: 100vh;
   margin: 0;
-  background: #f5f7fb;
+  background: var(--wi-color-canvas);
 }
 
 #root {
@@ -44,13 +25,63 @@ body {
   margin: 0 auto;
 }
 
+.wi-header-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  margin-bottom: 14px;
+}
+
+.wi-header-top .wi-eyebrow {
+  margin-bottom: 0;
+}
+
+.wi-repository-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  min-height: 44px;
+  color: var(--wi-color-ink);
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-underline-offset: 0.2em;
+}
+
+.wi-repository-link:hover {
+  color: var(--wi-color-focus);
+}
+
+.wi-repository-link:focus-visible {
+  outline: 3px solid var(--wi-color-focus);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.wi-edition {
+  display: inline-block;
+  padding: 0.3em 0.55em;
+  border: 1px solid var(--wi-color-gold);
+  border-radius: 7px;
+  background: var(--wi-color-surface-muted);
+  color: var(--wi-color-ink);
+  font-family: var(--wi-font-body);
+  font-size: 0.38em;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+  vertical-align: middle;
+  white-space: nowrap;
+}
 .wi-header {
   margin-bottom: 30px;
 }
 
 .wi-eyebrow {
   margin: 0 0 10px;
-  color: #315e9e;
+  color: var(--wi-color-focus);
   font-size: 0.82rem;
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -59,7 +90,8 @@ body {
 
 .wi-header h1 {
   margin: 0;
-  color: #132238;
+  color: var(--wi-color-ink);
+  font-family: var(--wi-font-heading);
   font-size: clamp(2rem, 5vw, 3rem);
   line-height: 1.15;
   letter-spacing: -0.035em;
@@ -68,35 +100,36 @@ body {
 .wi-introduction {
   max-width: 680px;
   margin: 16px 0 0;
-  color: #526278;
+  color: var(--wi-color-text-secondary);
   font-size: 1.02rem;
   line-height: 1.65;
 }
 
 .wi-panel {
   padding: 32px;
-  border: 1px solid #dbe3ed;
+  border: 1px solid var(--wi-color-border);
   border-radius: 16px;
-  background: #ffffff;
-  box-shadow: 0 8px 30px rgb(19 34 56 / 5%);
+  background: var(--wi-color-surface);
+  box-shadow: 0 8px 30px rgb(37 35 33 / 6%);
 }
 
 .wi-panel h2 {
   margin: 0 0 10px;
-  color: #132238;
+  color: var(--wi-color-ink);
+  font-family: var(--wi-font-heading);
   font-size: 1.35rem;
 }
 
 .wi-description {
   margin: 0 0 24px;
-  color: #526278;
+  color: var(--wi-color-text-secondary);
   line-height: 1.6;
 }
 
 .wi-label {
   display: block;
   margin-bottom: 10px;
-  color: #23374e;
+  color: var(--wi-color-ink);
   font-size: 0.93rem;
   font-weight: 650;
 }
@@ -106,24 +139,24 @@ body {
   width: 100%;
   min-height: 300px;
   padding: 16px;
-  border: 1px solid #bdcad9;
+  border: 1px solid var(--wi-color-border);
   border-radius: 10px;
   outline: none;
-  background: #fcfdff;
-  color: #152238;
-  font-family: 'Cascadia Code', Consolas, 'Courier New', monospace;
+  background: var(--wi-color-surface);
+  color: var(--wi-color-ink);
+  font-family: var(--wi-font-data);
   font-size: 0.88rem;
   line-height: 1.6;
   resize: vertical;
 }
 
 .wi-textarea:focus-visible {
-  border-color: #2563eb;
-  box-shadow: 0 0 0 3px rgb(37 99 235 / 15%);
+  border-color: var(--wi-color-focus);
+  box-shadow: 0 0 0 3px rgb(139 97 43 / 23%);
 }
 
 .wi-textarea::placeholder {
-  color: #74849a;
+  color: var(--wi-color-text-secondary);
 }
 
 .wi-actions {
@@ -136,10 +169,10 @@ body {
 
 .wi-submit {
   padding: 12px 22px;
-  border: 1px solid #234fb7;
+  border: 1px solid var(--wi-color-ink);
   border-radius: 9px;
-  background: #2456ca;
-  color: #ffffff;
+  background: var(--wi-color-ink);
+  color: var(--wi-color-canvas);
   font: inherit;
   font-weight: 650;
   cursor: pointer;
@@ -147,17 +180,17 @@ body {
 }
 
 .wi-submit:hover {
-  background: #1945aa;
+  background: #3a342f;
 }
 
 .wi-submit:focus-visible {
-  outline: 3px solid #93b4ff;
+  outline: 3px solid var(--wi-color-focus);
   outline-offset: 3px;
 }
 
 .wi-privacy {
   margin: 0;
-  color: #596b80;
+  color: var(--wi-color-text-secondary);
   font-size: 0.85rem;
 }
 
@@ -217,7 +250,7 @@ body {
 
 .wi-footer {
   margin-top: 28px;
-  color: #475569;
+  color: var(--wi-color-text-secondary);
   font-size: 0.82rem;
   line-height: 1.6;
   text-align: center;
