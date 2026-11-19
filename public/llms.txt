@@ -1,0 +1,25 @@
+# Workflow Inspector Core
+
+> A free browser-based tool for static analysis of exported n8n workflow JSON.
+
+Workflow Inspector Core analyzes n8n workflow JSON locally using ten static checks. It does not execute or modify workflows, and workflow contents are not uploaded to a server. No n8n account or server is required. JavaScript is required to use the analyzer.
+
+The ten checks cover:
+- Duplicate node identifiers and names.
+- Dangling node references and malformed connections.
+- Isolated nodes and disconnected node groups.
+- Cycles in main connections and duplicate connections.
+- Missing node identifiers and blank node names.
+
+Available interface capabilities:
+- Paste workflow JSON or select a local JSON file up to 5 MiB.
+- Review findings with severity and confidence information.
+- Filter, search, and group findings by rule.
+- Export a JSON audit report.
+
+Findings are structural observations and do not necessarily indicate runtime errors.
+
+## Resources
+
+- [Workflow Inspector Core](https://roglz.github.io/workflow-inspector/): Public browser-based analyzer.
+- [GitHub repository](https://github.com/roglz/workflow-inspector): Source code and project documentation.

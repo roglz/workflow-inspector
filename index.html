@@ -21,10 +21,28 @@
     />
     <link rel="canonical" href="https://roglz.github.io/workflow-inspector/" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Workflow Inspector Core",
+        "url": "https://roglz.github.io/workflow-inspector/",
+        "description": "Analyze n8n workflow JSON locally in your browser with 10 static checks. No n8n account required.",
+        "applicationCategory": "DeveloperApplication",
+        "isAccessibleForFree": true
+      }
+    </script>
     <title>Workflow Inspector Core | n8n Workflow JSON Analysis</title>
   </head>
   <body>
     <div id="root"></div>
+    <noscript>
+      <p>
+        Workflow Inspector Core analyzes exported n8n workflow JSON with ten
+        static checks in your browser. It does not upload or execute workflows.
+        Enable JavaScript to use the analyzer.
+      </p>
+    </noscript>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
